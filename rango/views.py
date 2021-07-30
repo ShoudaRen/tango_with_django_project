@@ -27,15 +27,16 @@ def index(request):
     return response
 
 
-# 是否需要修改
+
+
 def about(request):
     
-      
+    context_dict = {}
     visitor_cookie_handler(request)
-    response = render(request, 'rango/about.html',request.session['visits'])
-    
+    context_dict['visits'] = request.session['visits']
     # Change return HttpResponse('Rango says: Here is the about page. <a href="/rango/">Index</a>') 
     # to render(request, 'rango/about.html'). thus, we can use template via this 
+    response = render(request, 'rango/about.html', context=context_dict)
     return response
 
 
