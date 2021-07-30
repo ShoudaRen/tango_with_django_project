@@ -21,6 +21,8 @@ def index(request):
     return render(request, 'rango/index.html', context=context_dict)
 
 def about(request):
+    # Change return HttpResponse('Rango says: Here is the about page. <a href="/rango/">Index</a>') 
+    # to render(request, 'rango/about.html'). thus, we can use template via this 
     return render(request, 'rango/about.html')
 
 
